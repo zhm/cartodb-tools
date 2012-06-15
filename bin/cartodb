@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'thor'
+require 'cartodb-rb-client'
+require 'cartodb-tools'
+
+CartodbTools::CLI.start
