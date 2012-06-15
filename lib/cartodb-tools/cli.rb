@@ -9,12 +9,8 @@ module CartodbTools
     def import
       raise unless File.exists? options[:file]
 
-      puts CartodbTools::Config.config
       CartoDB::Init.start CartodbTools::Config.config
-
       CartoDB::Connection.create_table options[:table_name], File.open(options[:file]), options[:geom_type]
-
-      puts CartoDB::Connection.table options[:table_name]
     end
   end
 end
